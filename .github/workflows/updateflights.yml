@@ -1,0 +1,26 @@
+name: Update Flights to Europe from Boston
+on:
+  schedule:
+    - cron: '0 9 * * *'
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          pip install requests
+      - name: Run update script
+        env:
+          AVIATIONSTACK_API_KEY: ${{ secrets.AVIATIONSTACK_API_KEY }}
+        run: python bostonLoganToEuropeanHubs.py
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add index.html styles.css
+          git commit -m "Update today's flights"
+          git push
