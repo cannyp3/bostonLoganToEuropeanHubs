@@ -43,12 +43,12 @@ try:
     # Generate HTML
     html = f"""<html>
     <head>
-        <title>BOS European Hub Departures</title>
+        <title>Weekend European Hub Departures from Boston</title>
         <link rel="stylesheet" href="styles.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Departures to European Hubs from Boston Today</h1>
+        <h1> Departures to European Hubs from Boston Today</h1>
         <p>Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}</p>"""
 
     if all_flights: 

@@ -1,7 +1,7 @@
-name: Update Flights to Europe from Boston
+name: Update Weekend Flights to Europe from Boston
 on:
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '0 9 * * 5,6,0'
 jobs:
   update-news:
     runs-on: ubuntu-latest
