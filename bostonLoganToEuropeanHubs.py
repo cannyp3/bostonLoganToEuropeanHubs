@@ -12,7 +12,7 @@ API_URL = 'http://api.aviationstack.com/v1/flights'
 
 # Get today's date in YYYY-MM-DD format
 today = datetime.now().strftime('%Y-%m-%d')
-destinations = ['LHR','FRA','AMS'] # London, Frankfurt, Amsterdam
+destinations = ['LHR','FRA'] # London, Frankfurt
 all_flights = []
 
 try: 
